@@ -1,6 +1,8 @@
 package com.example.assignment_6;
 
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,7 +24,8 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.category_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.category_item, parent, false);
         return new ViewHolder(view);
     }
 
@@ -31,6 +34,13 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
         Category category = categoryList.get(position);
         holder.categoryName.setText(category.getName());
         holder.categoryImage.setImageResource(category.getImageResId());
+
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(context, ProductDetailActivity.class);
+            intent.putExtra("product_name", category.getName());
+            intent.putExtra("product_image", category.getImageResId());
+            context.startActivity(intent);
+        });
     }
 
     @Override
@@ -38,14 +48,14 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
         return categoryList.size();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
-        public ImageView categoryImage;
-        public TextView categoryName;
+    static class ViewHolder extends RecyclerView.ViewHolder {
+        TextView categoryName;
+        ImageView categoryImage;
 
-        public ViewHolder(@NonNull View itemView) {
+        ViewHolder(View itemView) {
             super(itemView);
-            categoryImage = itemView.findViewById(R.id.category_image);
             categoryName = itemView.findViewById(R.id.category_name);
+            categoryImage = itemView.findViewById(R.id.category_image);
         }
     }
 }
