@@ -2,7 +2,7 @@
 
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
     android:elevation="4dp"
@@ -21,7 +21,8 @@
             android:id="@+id/category_image"
             android:layout_width="64dp"
             android:layout_height="64dp"
-            android:contentDescription="@string/category_icon" />
+            android:contentDescription="@string/category_icon"
+            android:layout_gravity="center" />
 
         <TextView
             android:id="@+id/category_name"
@@ -30,6 +31,7 @@
             android:textAlignment="center"
             android:textSize="14sp"
             android:layout_marginTop="8dp"
-            android:textColor="@android:color/black"/>
+            android:textColor="@android:color/black"
+            android:layout_gravity="center" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>

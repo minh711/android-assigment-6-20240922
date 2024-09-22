@@ -27,9 +27,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupViewPager() {
-        List<Fragment> fragments = new ArrayList<Fragment>();
-        fragments.add(new FeaturedFragment()); // Create your FeaturedFragment class
-        fragments.add(new DealsFragment());    // Create your DealsFragment class
+        List<Fragment> fragments = new ArrayList<>();
+        fragments.add(new FeaturedFragment());
+        fragments.add(new DealsFragment());
         fragments.add(new CategoriesFragment());
 
         ViewPagerAdapter adapter = new ViewPagerAdapter(this, fragments);
