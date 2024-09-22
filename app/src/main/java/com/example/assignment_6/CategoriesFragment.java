@@ -29,17 +29,16 @@ public class CategoriesFragment extends Fragment {
         int numberOfColumns = 3;
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), numberOfColumns));
 
-        // Initialize your category list
         categoryList = new ArrayList<>();
-        categoryList.add(new Category("Pharmacy", R.drawable.pharmacy));
-        categoryList.add(new Category("Registry", R.drawable.registry));
-        categoryList.add(new Category("Cartwheel", R.drawable.cartwheel));
-        categoryList.add(new Category("Clothing", R.drawable.clothing));
-        categoryList.add(new Category("Shoes", R.drawable.shoes));
-        categoryList.add(new Category("Accessories", R.drawable.accessories));
-        categoryList.add(new Category("Baby", R.drawable.baby));
-        categoryList.add(new Category("Home", R.drawable.home));
-        categoryList.add(new Category("Patio & Garden", R.drawable.patio_garden));
+        categoryList.add(new Category("Pharmacy", R.drawable.pharmacy, "Your health is important."));
+        categoryList.add(new Category("Registry", R.drawable.registry, "Find everything you need."));
+        categoryList.add(new Category("Cartwheel", R.drawable.cartwheel, "Discounts on your favorite items."));
+        categoryList.add(new Category("Clothing", R.drawable.clothing, "Latest trends and styles."));
+        categoryList.add(new Category("Shoes", R.drawable.shoes, "Footwear for every occasion."));
+        categoryList.add(new Category("Accessories", R.drawable.accessories, "Complete your look."));
+        categoryList.add(new Category("Baby", R.drawable.baby, "Everything for your little one."));
+        categoryList.add(new Category("Home", R.drawable.home, "Essentials for a cozy home."));
+        categoryList.add(new Category("Patio & Garden", R.drawable.patio_garden, "Beautify your outdoor space."));
 
         categoryAdapter = new CategoryAdapter(categoryList, getActivity());
         recyclerView.setAdapter(categoryAdapter);
