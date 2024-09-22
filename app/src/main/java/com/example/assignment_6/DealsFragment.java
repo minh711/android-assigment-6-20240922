@@ -14,7 +14,6 @@ public class DealsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        // Inflate the layout containing the RecyclerView
         return inflater.inflate(R.layout.fragment_deals, container, false);
     }
 }
